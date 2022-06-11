@@ -8,7 +8,7 @@ services:
       POSTGRES_DB: 'boenegrgotask'
       POSTGRES_USER: 'django'
     volumes:
-      - db-data:/var/lib/postgresql/boenegrgotask/data
+      - db-data-boenegrgotask:/var/lib/postgresql/data
 
   web:
     build:
@@ -33,14 +33,14 @@ services:
     depends_on:
       - web
     networks:
-      - nginx-proxy-2
+      - nginx-proxy
       - default
 
 volumes:
-  db-data:
+  db-data-boenegrgotask:
     name: "boenegrgotask-db"
 
 networks:
   default:
-  nginx-proxy-2:
+  nginx-proxy:
     external: true

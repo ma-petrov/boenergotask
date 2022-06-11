@@ -17,16 +17,18 @@ import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-a-4-%obpc@0ho3e)9y3cqs4e1ot#moise50wk=tueb^i@h*4px')
 
-# Secret key
-if DEBUG:
-    SECRET_KEY = 'django-insecure-6#z7x&uog9l2oej%p!5!@ej^b$=l)uo6q(lho*608wkixq5+bu'
+
+if os.environ.get('DJANGO_DEBUG', 'True') == 'False':
+    DEBUG = False
 else:
-    pass
+    DEBUG = True
 
-ALLOWED_HOSTS = []
+
+ALLOWED_HOSTS = ['127.0.0.1', 'web', 'localhost', 'boenergotask.clipdecliprepeat.ru', 'www.boenergotask.clipdecliprepeat.ru']
+CSRF_TRUSTED_ORIGINS = [f'http://{host}' for host in ALLOWED_HOSTS] + [f'https://{host}' for host in ALLOWED_HOSTS]
+
 
 
 INSTALLED_APPS = [
@@ -74,26 +76,14 @@ WSGI_APPLICATION = 'boenergotask.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'kazantracks',
+        'USER': 'django',
+        'PASSWORD': os.environ.get('DB_PASSWORD'),
+        'HOST': os.environ.get('DB_HOST'),
+        'PORT': os.environ.get('DB_PORT'),
     }
 }
-
-
-# AUTH_PASSWORD_VALIDATORS = [
-#     {
-#         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-#     },
-#     {
-#         'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-#     },
-#     {
-#         'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-#     },
-#     {
-#         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-#     },
-# ]
 
 
 # Internationalization

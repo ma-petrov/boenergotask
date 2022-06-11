@@ -15,4 +15,4 @@ ARG PORT=8002
 ARG LOG_LEVEL=info
 ENV PORT=$PORT
 
-CMD gunicorn --log-level "${LOG_LEVEL}" --access-logfile - --workers 3 -b "0.0.0.0:$PORT" routsweb.wsgi:application
+CMD gunicorn --log-level "${LOG_LEVEL}" --access-logfile - --workers 3 -b "0.0.0.0:$PORT" boenergotask.wsgi:application
