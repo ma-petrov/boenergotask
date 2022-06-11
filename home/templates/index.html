@@ -1,0 +1,16 @@
+{% extends "base_generic.html" %}
+
+{% block static %}
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock %}
+
+{% block title %}<title>home</title>{% endblock %}
+
+{% block content %}
+    <div class="index-header-container">
+        <div class="index-header-text-container">
+            <div class="index-header-text">It works!</div>
+        </div>
+    </div>
+{% endblock %}

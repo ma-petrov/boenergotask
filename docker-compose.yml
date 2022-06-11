@@ -1,0 +1,46 @@
+services:
+  database:
+    image: postgres
+    healthcheck:
+      test: pg_isready
+    environment:
+      POSTGRES_PASSWORD: "${DB_PASSWORD:?please set database password}"
+      POSTGRES_DB: 'boenegrgotask'
+      POSTGRES_USER: 'django'
+    volumes:
+      - db-data:/var/lib/postgresql/boenegrgotask/data
+
+  web:
+    build:
+      context: .
+      args:
+        - PORT=8002
+    environment:
+      DJANGO_DEBUG: "${DJANGO_DEBUG:-False}"
+      DB_HOST: database
+      DB_PASSWORD:
+      LOG_LEVEL: debug
+    depends_on:
+      - database
+
+  nginx:
+    build:
+      context: .
+      dockerfile: nginx.Dockerfile
+    environment:
+      VIRTUAL_HOST:
+      LETSENCRYPT_HOST:
+    depends_on:
+      - web
+    networks:
+      - nginx-proxy-2
+      - default
+
+volumes:
+  db-data:
+    name: "boenegrgotask-db"
+
+networks:
+  default:
+  nginx-proxy-2:
+    external: true
