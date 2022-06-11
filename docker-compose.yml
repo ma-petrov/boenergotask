@@ -20,6 +20,8 @@ services:
       DB_HOST: database
       DB_PASSWORD:
       LOG_LEVEL: debug
+    volumes:
+      - uploads-boenegrgotask:/usr/src/images/uploads/
     depends_on:
       - database
 
@@ -37,6 +39,8 @@ services:
       - default
 
 volumes:
+  uploads-boenegrgotask:
+    name: "uploads-boenegrgotask"
   db-data-boenegrgotask:
     name: "boenegrgotask-db"
 
