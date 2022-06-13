@@ -37,10 +37,11 @@ class Equation(models.Model):
             roots_num = 1
             if b != 0:
                 root_1 = -c/b
-            else:
-                root_1 = -c
-        
-        return Bunch(dict(roots_num=roots_num, root_1=root_1, root_2=root_2))
+            elif c == 0:
+                roots_num = 4
+
+        cls.objects.create(a=a, b=b, c=c, roots_num=roots_num, root_1=root_1, root_2=root_2)
+        return cls.objects.last()
 
     def render_equation(self):
         def render_num(x):
@@ -88,7 +89,7 @@ class Equation(models.Model):
         if self.a != 0 or self.b != 0 or self.c != 0:
             noght = ''
         else:
-            noght = '0 '
+            noght = '0 * x^2 + 0*x '
 
         return f'{sign_a}{a}{sign_b}{b}{sign_c}{c}{noght}= 0'
 
@@ -99,5 +100,7 @@ class Equation(models.Model):
             return f'Один корень: {self.root_1}'
         elif self.roots_num == 2:
             return f'Два корня: {self.root_1}, {self.root_2}'
+        elif self.roots_num == 4:
+            return 'Бесконечное кол-во корней'
         else:
             return 'Некорректные данные'

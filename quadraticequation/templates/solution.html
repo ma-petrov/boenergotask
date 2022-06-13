@@ -12,15 +12,7 @@
         <div class="header">Решение</div>
     </div>
     <div class="solution-result-container">
-        {% if result.roots_num == 0 %}
-            <span class="solution-result">Уравнение не имеет корней</span>
-        {% elif result.roots_num == 1 %}
-            <span class="solution-result">Один корень: {{ result.root_1 }}</span>
-        {% elif result.roots_num == 2 %}
-            <span class="solution-result">Два корня: {{ result.root_1 }}, {{ result.root_2 }}</span>
-        {% else %}
-            Некорректные данные
-        {% endif %}
+        {{ solution.render_solution }}
     </div>
     <div class="solution-buttons-container">
         <a href="/quadratic-equation/">

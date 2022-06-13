@@ -16,11 +16,8 @@ def quadratic_equation(request):
             print(b)
             print(c)
 
-            s = Equation.solve(a, b, c)
-
-            Equation.objects.create(a=a, b=b, c=c, roots_num=s.roots_num, root_1=s.root_1, root_2=s.root_2)
-
-            return render(request, 'solution.html', dict(result=s))
+            solution = Equation.solve(a, b, c)
+            return render(request, 'solution.html', dict(solution=solution))
     else:
         form = EquationForm()
 
