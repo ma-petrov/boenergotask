@@ -1,0 +1,33 @@
+{% extends "base_generic.html" %}
+
+{% block static %}
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/solution.css' %}">
+{% endblock %}
+
+{% block title %}<title>home</title>{% endblock %}
+
+{% block content %}
+    <div class="solution-result-header-container">
+        <div class="header">Решение</div>
+    </div>
+    <div class="solution-result-container">
+        {% if result.roots_num == 0 %}
+            <span class="solution-result">Уравнение не имеет корней</span>
+        {% elif result.roots_num == 1 %}
+            <span class="solution-result">Один корень: {{ result.root_1 }}</span>
+        {% elif result.roots_num == 2 %}
+            <span class="solution-result">Два корня: {{ result.root_1 }}, {{ result.root_2 }}</span>
+        {% else %}
+            Некорректные данные
+        {% endif %}
+    </div>
+    <div class="solution-buttons-container">
+        <a href="/quadratic-equation/">
+            <div class="solution-button">Решить новое уравнение</div>
+        </a>
+        <a href="/">
+            <div class="solution-button">На главную</div>
+        </a>
+    </div>
+{% endblock %}

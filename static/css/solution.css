@@ -1,0 +1,15 @@
+.solution-result-header-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: inherit;
+    margin-top: 200px;
+}
+
+.solution-result-container {
+    display: flex;
+    justify-content: center;
+    margin-top: calc(var(--margin) * 3);
+    margin-bottom: calc(var(--margin) * 3);
+    font-size: 20px;
+}
