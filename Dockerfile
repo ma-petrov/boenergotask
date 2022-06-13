@@ -11,7 +11,7 @@ COPY requirements.txt ./
 RUN pip install -r requirements.txt
 COPY --chown=django:django . ./
 
-ARG PORT=8002
+ARG PORT=8000
 ARG LOG_LEVEL=info
 ENV PORT=$PORT
 
