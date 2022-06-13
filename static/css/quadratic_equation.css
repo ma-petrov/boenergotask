@@ -1,0 +1,60 @@
+.qe-header-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: inherit;
+    margin-top: 200px;
+}
+
+.qe-data-container {
+    display: flex;
+    justify-content: center;
+    margin-top: calc(var(--margin) * 3);
+    margin-bottom: calc(var(--margin) * 3);
+    font-size: 30px;
+    line-height: 40px;
+}
+
+.qe-input {
+    width: 100px;
+    height: 40px;
+    margin-left: var(--margin);
+    margin-right: var(--margin);
+    font-size: 30px;
+}
+
+.qe-button {
+    width: 200px;
+    height: 30px;
+    background-color: white;
+    border: none;
+    border-radius: var(--radius);
+    box-shadow: 0px 5px 10px var(--dark-color);
+    text-align: center;
+    font-size: 14px;
+    line-height: 30px;
+}
+
+.qe-solutions-history-container {
+    width: 800px;
+    max-height: 400px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.qe-solution-conatiner {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-top: var(--margin);
+    padding-bottom: var(--margin);
+}
+
+.qe-solution-conatiner-border {
+    border-top: 1px solid var(--dark-color);
+}
+
+.qe-solution-data {
+    width: 380px;
+    line-height: 20px;
+}

@@ -9,8 +9,8 @@ urlpatterns = [
 
     # apps urls files include
     path('home/', include('home.urls')),
-    path('quadraticequation/', include('quadraticequation.urls')),
-    path('hundreditems/', include('hundreditems.urls')),
+    path('quadratic-equation/', include('quadraticequation.urls')),
+    path('hundred-items/', include('hundreditems.urls')),
 
     # index redirection
     path('', RedirectView.as_view(url='/home/', permanent=True)),

@@ -5,10 +5,10 @@ services:
       test: pg_isready
     environment:
       POSTGRES_PASSWORD: "${DB_PASSWORD:?please set database password}"
-      POSTGRES_DB: 'boenegrgotask'
+      POSTGRES_DB: 'boenergotask'
       POSTGRES_USER: 'django'
     volumes:
-      - db-data-boenegrgotask:/var/lib/postgresql/data
+      - db-data-boenergotask:/var/lib/postgresql/data
 
   web:
     build:
@@ -21,7 +21,7 @@ services:
       DB_PASSWORD:
       LOG_LEVEL: debug
     volumes:
-      - uploads-boenegrgotask:/usr/src/images/uploads/
+      - uploads-boenergotask:/usr/src/images/uploads/
     depends_on:
       - database
 
@@ -39,10 +39,10 @@ services:
       - default
 
 volumes:
-  uploads-boenegrgotask:
-    name: "uploads-boenegrgotask"
-  db-data-boenegrgotask:
-    name: "boenegrgotask-db"
+  uploads-boenergotask:
+    name: "uploads-boenergotask"
+  db-data-boenergotask:
+    name: "boenergotask-db"
 
 networks:
   default:

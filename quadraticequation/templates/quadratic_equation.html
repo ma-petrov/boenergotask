@@ -1,0 +1,45 @@
+{% extends "base_generic.html" %}
+
+{% block static %}
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/quadratic_equation.css' %}">
+{% endblock %}
+
+{% block title %}<title>home</title>{% endblock %}
+
+{% block content %}
+    <div class="qe-header-container">
+        <div class="header">Решение квадратного уравнения вида a * x^2 + b * x + c = 0</div>
+    </div>
+    <!-- <div class="qe-data-container"> -->
+    <form method="post">
+        {% csrf_token %}
+        <div class="qe-data-container">
+            {{ form.a }} * x^2 + {{ form.b }} * x + {{ form.c }} = 0
+        </div>
+        <div class="qe-data-container">
+            <input class="qe-button" type="submit" value="Решить">
+        </div>
+    </form>
+    <!-- </div> -->
+    <div class="qe-data-container">
+        <a href="/"><div class="qe-button">На главную</div></a>
+    </div>
+    <div class="header">История решений (последние 20)</div>
+    <div class="qe-solutions-history-container">
+        {% if solutions %}
+            <div class="qe-solution-conatiner">
+                <div class="qe-solution-data">Уравнение</div>
+                <div class="qe-solution-data">Решение</div>
+            </div>
+            {% for s in solutions %}
+                <div class="qe-solution-conatiner qe-solution-conatiner-border">
+                    <div class="qe-solution-data">{{ s.render_equation }}</div>
+                    <div class="qe-solution-data">{{ s.render_solution }}</div>
+                </div>
+            {% endfor %}
+        {% else %}
+            Нет истории решений
+        {% endif %}
+    </div>
+{% endblock %}

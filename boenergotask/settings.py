@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'boenergotask.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'kazantracks',
+        'NAME': 'boenergotask',
         'USER': 'django',
         'PASSWORD': os.environ.get('DB_PASSWORD'),
         'HOST': os.environ.get('DB_HOST'),
