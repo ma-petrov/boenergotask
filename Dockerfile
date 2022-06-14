@@ -1,7 +1,5 @@
 FROM python:3-alpine
 
-RUN apk --update add curl # required for healthcheck
-
 RUN adduser -D django
 ENV PATH=$PATH:/home/django/.local/bin
 USER django

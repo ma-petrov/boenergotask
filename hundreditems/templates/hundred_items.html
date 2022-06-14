@@ -1,0 +1,36 @@
+{% extends "base_generic.html" %}
+
+{% block static %}
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/hundred_items.css' %}">
+{% endblock %}
+
+{% block title %}<title>home</title>{% endblock %}
+
+{% block content %}
+    <div class="hi-header-container">
+        <div class="header">Введи номер предмета для получения цвета</div>
+    </div>
+    <form method="post">
+        {% csrf_token %}
+        <div class="hi-data-container">
+            {{ form.item_id }}
+        </div>
+        <div class="hi-data-container hi-error-text"></div>
+            {{ form.item_id.errors }}
+        <div class="hi-data-container">
+            <input class="hi-button" type="submit" value="Узнать цвет">
+        </div>
+    </form>
+    {% if color %}
+        <div class="hi-data-container">{{ color }}</div>
+    {% endif %}
+    <div class="hi-data-container">
+        <div class="header">Статистика по угадываемым предметам</div>
+    </div>
+    <div class="hi-data-container hi-small-text">{{ item_stat }}</div>
+    <div class="hi-data-container hi-small-text">{{ max_items }}</div>
+    <div class="hi-data-container">
+        <a href="/"><div class="hi-button">На главную</div></a>
+    </div> 
+{% endblock %}

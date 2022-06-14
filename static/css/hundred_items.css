@@ -1,0 +1,37 @@
+.hi-header-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: inherit;
+    margin-top: 200px;
+}
+
+.hi-data-container {
+    display: flex;
+    justify-content: center;
+    margin-top: calc(var(--margin) * 3);
+    margin-bottom: calc(var(--margin) * 3);
+    font-size: 30px;
+    line-height: 40px;
+}
+
+.hi-small-text {
+    font-size: 16px;
+}
+
+.hi-error-text {
+    font-size: 16px;
+    color: red;
+}
+
+.hi-button {
+    width: 200px;
+    height: 30px;
+    background-color: white;
+    border: none;
+    border-radius: var(--radius);
+    box-shadow: 0px 5px 10px var(--dark-color);
+    text-align: center;
+    font-size: 14px;
+    line-height: 30px;
+}
