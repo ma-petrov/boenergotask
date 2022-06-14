@@ -13,7 +13,7 @@ class Color(models.Model):
     @classmethod
     def get_max_items(cls):
         colors = cls.objects.values('name', 'max_items')
-        return 'Максимальное кол-во предметов: ' + ', '.join([f'{c["name"]} - {c["max_items"]}' for c in colors])
+        return 'Предметы: ' + ', '.join([f'{c["name"]} - {c["max_items"]}' for c in colors])
 
 class Item(models.Model):
     item_id = models.PositiveIntegerField()
@@ -26,9 +26,9 @@ class Item(models.Model):
     def get_item_stat(cls):
         items = cls.objects.select_related('color').values('color__name').annotate(cnt=Count('item_id'))
         if items:
-            return 'Предполагаемое кол-во предметов: ' + ', '.join([f'{item["color__name"]} - {item["cnt"]}' for item in items])
+            return 'Найденные предметы: ' + ', '.join([f'{item["color__name"]} - {item["cnt"]}' for item in items])
         else:
-            return 'Пока нет предметов'
+            return 'Пока нет найденных предметов'
         
     @classmethod
     def guess_color(cls, item_id):
