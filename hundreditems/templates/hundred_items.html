@@ -16,21 +16,41 @@
         <div class="hi-data-container">
             {{ form.item_id }}
         </div>
-        <div class="hi-data-container hi-error-text"></div>
+        <div class="hi-data-container"></div>
             {{ form.item_id.errors }}
         <div class="hi-data-container">
-            <input class="hi-button" type="submit" value="Узнать цвет">
+            <input class="wide-button" type="submit" value="Узнать цвет">
         </div>
     </form>
+
+    <a href="/">
+        <div class="wide-button">На главную</div>
+    </a>
+
     {% if color %}
         <div class="hi-data-container">{{ color }}</div>
     {% endif %}
-    <div class="hi-data-container">
-        <div class="header">Статистика по угадываемым предметам</div>
+
+    <div class="desc-container">
+        <div class="desc-header-container">
+            <div class="desc-header-text">Статистика по угадываемым предметам</div>
+        </div>
+        <div class="desc-body-container">
+            <p>{{ item_stat }}</p>
+            <p>{{ max_items }}</p>
+        </div>
     </div>
-    <div class="hi-data-container hi-small-text">{{ item_stat }}</div>
-    <div class="hi-data-container hi-small-text">{{ max_items }}</div>
-    <div class="hi-data-container">
-        <a href="/"><div class="hi-button">На главную</div></a>
-    </div> 
+
+    <div class="desc-container">
+        <button class="desc-header-container" id="id-desc-open-button">
+            <div class="desc-header-text">Описание работы сервиса</div>
+            <div class="desc-header-is-opened-icon" id="id-desc-header-is-opened-icon"></div>
+        </button>
+        <div class="desc-body-container hidden" id="id-desc-body-container">
+            Предполагается, что красных, зеленых и синих предметов заранее известное количество. Предметы лежат в корзине, у каждого есть свой id, в начале сответствие цвета конкретному предмету неизвестно. Цвет предмета определяется (угадывается) один раз, при первом запросе через форму. Угадывание происходит вероятностыным методом, из остатка предметов с неопределенным цветом считается вероятности принадлежности в соответствии с количеством предметов. Например, если осталось 2 красных, 3 зеленых и 5 синих предметов, то при угадывании следующего предмета вероятности получить соответственные цвета - 0.2, 0.3 и 0.5.
+            Когда у предмета угадывается первый раз цвет, данные о предмете заносятся в базу и при следующих запросах возврадается присвоенный цвет. 
+        </div>
+    </div>
+
+    <script src="/static/scripts/hundred_items.js"></script>
 {% endblock %}
