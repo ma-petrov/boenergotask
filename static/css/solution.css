@@ -11,11 +11,11 @@
     justify-content: center;
     margin-top: calc(var(--margin) * 3);
     margin-bottom: calc(var(--margin) * 3);
-    font-size: 20px;
 }
 
 .solution-button {
     height: 40px;
+    margin-bottom: var(--margin);
     background-color: var(--light-color);
     border: none;
     border-radius: var(--radius);
