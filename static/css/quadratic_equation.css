@@ -49,6 +49,7 @@
 
 .desc-container {
     margin-top: var(--margin);
+    margin-bottom: calc(var(--margin) * 5);
     border: 1px solid var(--dark-color);
     border-radius: var(--radius);
 }
