@@ -11,5 +11,21 @@
     justify-content: center;
     margin-top: calc(var(--margin) * 3);
     margin-bottom: calc(var(--margin) * 3);
-    font-size: 20px;
+}
+
+.solution-button {
+    height: 40px;
+    margin-bottom: var(--margin);
+    background-color: var(--light-color);
+    border: none;
+    border-radius: var(--radius);
+    text-align: center;
+    line-height: 40px;
+    color: black;
+}
+@media (max-device-width: 1499px) {
+    .solution-button {width: 100%;}
+}
+@media (min-device-width: 1499px) {
+    .solution-button {width: 400px}
 }

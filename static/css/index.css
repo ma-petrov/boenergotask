@@ -17,10 +17,10 @@
     text-align: center;
 }
 @media (max-device-width: 1499px) {
-    .wide-button {width: 100%;}
+    .index-button {width: 100%;}
 }
 @media (min-device-width: 1499px) {
-    .wide-button {width: 800px}
+    .index-button {width: 800px}
 }
 
 .index-button:hover {color: var(--accent-color)}

@@ -94,12 +94,18 @@ class Equation(models.Model):
         return f'{sign_a}{a}{sign_b}{b}{sign_c}{c}{noght}= 0'
 
     def render_solution(self):
+        def render_num(x):
+            if modf(x)[0] == 0:
+                return str(int(x))
+            else:
+                return str(round(x, 5))
+
         if self.roots_num == 0:
             return 'Нет корней'
         elif self.roots_num == 1:
-            return f'Один корень: {self.root_1}'
+            return f'Один корень: {render_num(self.root_1)}'
         elif self.roots_num == 2:
-            return f'Два корня: {self.root_1}, {self.root_2}'
+            return f'Два корня: {render_num(self.root_1)}, {render_num(self.root_2)}'
         elif self.roots_num == 4:
             return 'Бесконечное кол-во корней'
         else:
