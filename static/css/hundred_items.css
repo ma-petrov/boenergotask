@@ -28,11 +28,10 @@
     border-radius: var(--radius);
     text-align: center;
     line-height: 40px;
+    color: black;
 }
 @media (max-device-width: 1499px) {
-    .wide-button {
-        width: calc(100% - var(--margin) * 2);
-    }
+    .wide-button {width: 100%;}
 }
 @media (min-device-width: 1499px) {
     .wide-button {width: 800px}
@@ -43,14 +42,12 @@
  */
 
 .desc-container {
-    margin-top: 20px;
+    margin-top: var(--margin);
     border: 1px solid var(--dark-color);
     border-radius: var(--radius);
 }
 @media (max-device-width: 1499px) {
-    .desc-container {
-        width: calc(100% - var(--margin) * 2 - 2px);
-    }
+    .desc-container {width: 100%;}
 }
 @media (min-device-width: 1499px) {
     .desc-container {width: 798px}
