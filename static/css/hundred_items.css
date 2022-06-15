@@ -5,6 +5,12 @@
     width: inherit;
     margin-top: 200px;
 }
+@media (max-device-width: 1499px) {
+    .hi-header-container  {margin-top: var(--margin);}
+}
+@media (min-device-width: 1499px) {
+    .hi-header-container  {margin-top: 200px;}
+}
 
 .hi-data-container {
     display: flex;
