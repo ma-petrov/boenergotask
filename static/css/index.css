@@ -7,7 +7,6 @@
 }
 
 .index-button {
-    width: 400px;
     height: 40px;
     margin-bottom: var(--margin);
     background-color: var(--bg-color);
