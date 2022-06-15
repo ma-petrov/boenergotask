@@ -32,8 +32,6 @@
 @media (max-device-width: 1499px) {
     .wide-button {
         width: calc(100% - var(--margin) * 2);
-        margin-left: var(--margin);
-        margin-right: var(--margin);
     }
 }
 @media (min-device-width: 1499px) {
@@ -52,8 +50,6 @@
 @media (max-device-width: 1499px) {
     .desc-container {
         width: calc(100% - var(--margin) * 2 - 2px);
-        margin-left: var(--margin);
-        margin-right: var(--margin);
     }
 }
 @media (min-device-width: 1499px) {
