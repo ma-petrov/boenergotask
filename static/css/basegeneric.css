@@ -25,12 +25,44 @@ body {
     margin: 0px;
 }
 
+button {
+    font-size: 16px;
+    font-family: 'Antipasto Pro';
+	font-style: normal;
+	font-weight: normal;
+}
+
+input {
+    font-size: 16px;
+    font-family: 'Antipasto Pro';
+	font-style: normal;
+	font-weight: normal;
+}
 input {outline:none;}
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {-webkit-appearance: none;}
 
-a {text-decoration: none;}
+a {
+    color: black;
+    text-decoration: none;
+}
 a:hover {text-decoration: none;}
+a:visited {color: black}
+a:active {color: var(--accent-color)}
+
+p {
+    margin-top: 0px;
+    margin-bottom: var(--margin);
+}
+
+li {
+    color: red;
+}
+
+.hidden {display: none;}
+
+
+
 
 .container {
     height: inherit;

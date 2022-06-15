@@ -15,23 +15,73 @@
     line-height: 40px;
 }
 
-.hi-small-text {
-    font-size: 16px;
-}
-
-.hi-error-text {
-    font-size: 16px;
-    color: red;
-}
-
-.hi-button {
-    width: 200px;
-    height: 30px;
-    background-color: white;
+.wide-button {
+    height: 40px;
+    background-color: var(--light-color);
     border: none;
     border-radius: var(--radius);
-    box-shadow: 0px 5px 10px var(--dark-color);
     text-align: center;
-    font-size: 14px;
-    line-height: 30px;
+    line-height: 40px;
 }
+@media (max-device-width: 1499px) {
+    .wide-button {
+        width: calc(100% - var(--margin) * 2);
+        margin-left: var(--margin);
+        margin-right: var(--margin);
+    }
+}
+@media (min-device-width: 1499px) {
+    .wide-button {width: 800px}
+}
+
+/* 
+ * Service description
+ */
+
+.desc-container {
+    margin-top: 20px;
+    border: 1px solid var(--dark-color);
+    border-radius: var(--radius);
+}
+@media (max-device-width: 1499px) {
+    .desc-container {
+        width: calc(100% - var(--margin) * 2 - 2px);
+        margin-left: var(--margin);
+        margin-right: var(--margin);
+    }
+}
+@media (min-device-width: 1499px) {
+    .desc-container {width: 798px}
+}
+
+.desc-header-container {
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% - var(--margin) * 2);
+    margin: var(--margin);
+    padding: 0px;
+    background-color: white;
+    border: none;
+}
+
+.desc-header-text {
+    height: 20px;
+    line-height: 20px;
+}
+
+.desc-header-is-opened-icon {
+    width: 20px;
+    height: 20px;
+    background-size: cover;
+}
+
+.desc-body-container {
+    margin: var(--margin);
+    padding-top: var(--margin);
+    border-top: 1px solid var(--dark-color);
+    text-align: justify;
+    line-height: 20px;
+}
+
+
+

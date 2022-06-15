@@ -5,9 +5,6 @@
     width: inherit;
     margin-top: 200px;
 }
-.index-container a {color: black}
-.index-container a:visited {color: black}
-.index-container a:active {color: var(--accent-color)}
 
 .index-button {
     margin: var(--margin);

@@ -5,6 +5,7 @@ from .models import Item, Color
 
 def hundred_items(request):
     max_items = Color.get_max_items()
+    item_stat = Item.get_item_stat()
 
     if request.method == 'POST':
         form = ItemForm(request.POST)
@@ -16,7 +17,6 @@ def hundred_items(request):
             return render(request, 'hundred_items.html', context)
     else:
         form = ItemForm()
-        item_stat = Item.get_item_stat()
 
     context = dict(form=form, item_stat=item_stat, max_items=max_items)
     return render(request, 'hundred_items.html', context)
