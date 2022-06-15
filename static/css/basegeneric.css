@@ -75,7 +75,6 @@ li {
 
 .header {
     width: inherit;
-    height: 40px;
     margin-top: var(--margin);
     margin-bottom: var(--margin);
     font-size: 24px;

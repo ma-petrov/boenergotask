@@ -7,20 +7,21 @@
 }
 
 .index-button {
-    margin: var(--margin);
     width: 400px;
-    height: 60px;
+    height: 40px;
+    margin-bottom: var(--margin);
     background-color: var(--bg-color);
-    border: 1px solid var(--bg-color);
+    border: 1px solid var(--dark-color);
     border-radius: var(--radius);
-    box-shadow: 0px 5px 10px var(--dark-color);
     font-size: 18px;
-    line-height: 60px;
+    line-height: 40px;
     text-align: center;
 }
-.index-button:hover {
-    margin: calc(var(--margin) - 2px);
-    width: 404px;
-    height: 64px;
-    line-height: 64px;
+@media (max-device-width: 1499px) {
+    .wide-button {width: 100%;}
 }
+@media (min-device-width: 1499px) {
+    .wide-button {width: 800px}
+}
+
+.index-button:hover {color: var(--accent-color)}
